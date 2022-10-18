@@ -1,0 +1,3 @@
+require "bacon"
+
+Dir.glob("spec/**/redis*_spec.rb").each { |f| require f }

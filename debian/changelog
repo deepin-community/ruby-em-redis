@@ -1,0 +1,57 @@
+ruby-em-redis (0.3.0+gh-3) unstable; urgency=medium
+
+  [ Cédric Boutillier ]
+  * Bump debhelper compatibility level to 9
+  * Remove version in the gem2deb build-dependency
+  * Use https:// in Vcs-* fields
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.7 (no changes needed)
+  * Run wrap-and-sort on packaging files
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+  [ Debian Janitor ]
+  * Use secure copyright file specification URI.
+  * Use secure URI in Homepage field.
+  * Bump debhelper from old 9 to 12.
+  * Set debhelper-compat version in Build-Depends.
+  * Update Vcs-* headers from URL redirect.
+  * Use canonical URL in Vcs-Git.
+
+  [ Cédric Boutillier ]
+  * [ci skip] Update team name
+  * [ci skip] Add .gitattributes to keep unwanted files
+    out of the source package
+
+  [ Utkarsh Gupta ]
+  * Temporarily disable the tests (Closes: #978975)
+  * Add myself as an uploader
+  * Bump debhelper-compat to 13
+  * Bump Standards-Version to 4.5.1
+  * Fix package wrt cme
+  * Drop unnecessary dependency on ruby interpreter
+
+ -- Utkarsh Gupta <utkarsh@debian.org>  Wed, 13 Jan 2021 17:28:09 +0530
+
+ruby-em-redis (0.3.0+gh-2) unstable; urgency=medium
+
+  * Team upload
+
+  [ Per Andersson ]
+  * Add infrastructure in debian to run redis-server during the tests
+
+  [ Cédric Boutillier ]
+  * Add disable_test_random_order.patch to ignore a test with random output
+    (Closes: #747730)
+  * Use the Ruby method to run the tests
+  * Bump Standards-Version to 3.9.6 (no changes needed)
+  * Ignore spec/live_redis_protocol_spec.rb for the moment
+
+ -- Cédric Boutillier <boutil@debian.org>  Wed, 01 Oct 2014 00:28:13 +0200
+
+ruby-em-redis (0.3.0+gh-1) unstable; urgency=low
+
+  * Initial release (Closes: #745502)
+
+ -- Pirate Praveen <praveen@debian.org>  Wed, 23 Apr 2014 19:54:50 +0530

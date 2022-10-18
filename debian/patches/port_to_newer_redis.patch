@@ -1,0 +1,27 @@
+Description: port to redis-server >= 2.6
+ Some INFO fields have been renamed
+ https://raw.github.com/antirez/redis/2.6/00-RELEASENOTES
+ last_save_time -> rdb_last_save_time
+ changes_since_last_save -> rdb_changes_since_last_save
+Author: Cédric Boutillier <boutil@debian.org>
+Forwared: https://github.com/madsimian/em-redis/pull/8
+Last-Update: 2014-04-23
+
+--- a/spec/redis_commands_spec.rb
++++ b/spec/redis_commands_spec.rb
+@@ -563,7 +563,7 @@
+   #
+   it "should provide info (INFO)" do
+     @r.info do |r|
+-      [:last_save_time, :redis_version, :total_connections_received, :connected_clients, :total_commands_processed, :connected_slaves, :uptime_in_seconds, :used_memory, :uptime_in_days, :changes_since_last_save].each do |x|
++      [:rdb_last_save_time, :redis_version, :total_connections_received, :connected_clients, :total_commands_processed, :connected_slaves, :uptime_in_seconds, :used_memory, :uptime_in_days, :rdb_changes_since_last_save].each do |x|
+         r.keys.include?(x).should == true
+       end
+       done
+@@ -759,4 +759,4 @@
+       done
+     end
+   end
+-end
+\ No newline at end of file
++end

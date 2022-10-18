@@ -1,0 +1,16 @@
+Description: deactivate test with output which might come in random order
+Author: Cédric Boutillier <boutil@debian.org>
+Bug: https://github.com/madsimian/em-redis/issues/9 
+Last-Update: 2014-09-30
+
+--- a/spec/redis_commands_spec.rb
++++ b/spec/redis_commands_spec.rb
+@@ -752,7 +752,7 @@
+     @r.smembers "user:one:interests"
+     @r.smembers "user:two:interests"
+     @r.exec do |user_interests|
+-      user_interests.should == [["second-interest", "first-interest"], ['third-interest']]
++    #  user_interests.should == [["second-interest", "first-interest"], ['third-interest']]
+     end
+     @r.mget("user:one:id", "user:two:id") do |user_ids|
+       user_ids.should == ['id-one', 'id-two']

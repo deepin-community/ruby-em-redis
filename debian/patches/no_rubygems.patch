@@ -1,0 +1,11 @@
+Description: do not require rubygems
+Author: Cédric Boutillier <boutil@debian.org>
+Last-Update: 2014-04-23
+
+--- a/lib/em-redis/redis_protocol.rb
++++ b/lib/em-redis/redis_protocol.rb
+@@ -1,4 +1,3 @@
+-require 'rubygems'
+ require 'eventmachine'
+ 
+ module EventMachine
